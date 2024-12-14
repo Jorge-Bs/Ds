@@ -1,0 +1,14 @@
+package instrucciones;
+
+import machine.Wrapper;
+
+public class Add implements Instruccion {
+
+
+	@Override
+	public void operar(Wrapper wrap) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

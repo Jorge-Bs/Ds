@@ -1,0 +1,6 @@
+package main;
+
+public interface Instruccion {
+
+	public void operar(Pila pila);
+}

@@ -1,0 +1,13 @@
+package instrucciones;
+
+import machine.Wrapper;
+
+public class Jmp implements Instruccion {
+
+	@Override
+	public void operar(Wrapper wrap) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

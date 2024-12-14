@@ -1,0 +1,6 @@
+package machine;
+
+public class Memoria {
+
+	private int[] memoria = new int[1024];
+}

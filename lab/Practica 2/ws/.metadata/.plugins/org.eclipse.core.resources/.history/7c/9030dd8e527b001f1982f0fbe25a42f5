@@ -1,0 +1,78 @@
+package machine;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import instrucciones.*;
+
+
+public class VirtualMachine {
+	
+	
+	private  List<String[]> instrucciones = new ArrayList<String[]>();
+	
+	private  Pila pila = new Pila(32);
+	private Memoria memoria = new Memoria();
+	
+	
+	private Wrapper wrap;
+	
+	public VirtualMachine(String archivo) throws IOException {
+		cargarInstrucciones(archivo);
+		this.wrap= new Wrapper(pila, memoria,0);
+		ejecutaPrograma();
+	}
+	
+	private void cargarInstrucciones(String file) throws IOException {
+		BufferedReader fichero = new BufferedReader(new FileReader("programa.txt"));
+
+		String linea;
+		while ((linea = fichero.readLine()) != null)
+			cargaInstruccion(linea);
+		fichero.close();
+	}
+	
+	private  void cargaInstruccion(String linea) {
+		if (linea.trim().length() == 0)
+			return;
+
+		String[] palabras = linea.split(" ");
+		instrucciones.add(palabras);
+	}
+	
+	private  void ejecutaPrograma() {
+		while (wrap.getContador() < instrucciones.size()) {
+			String[] instruccion = instrucciones.get(wrap.getContador());
+			
+			Instruccion in=null;
+
+			if (instruccion[0].equals("push")) {
+				in = new Push(Integer.parseInt(instruccion[1]));
+			} else if (instruccion[0].equals("add")) {
+				in = new Add();
+			} else if (instruccion[0].equals("sub")) {
+				in = new Sub();
+			} else if (instruccion[0].equals("mul")) {
+				in = new Mul();
+			} else if (instruccion[0].equals("jmp")) {
+				in = new Jmp(Integer.parseInt(instruccion[1]));
+			} else if (instruccion[0].equals("jmpg")) {
+				in = new Jmpg(Integer.parseInt(instruccion[1]));
+			} else if (instruccion[0].equals("load")) {
+				in = new Load();
+			} else if (instruccion[0].equals("store")) {
+				in = new Store();
+			} else if (instruccion[0].equals("input")) {
+				in = new Input();
+			} else if (instruccion[0].equals("output")) {
+				in = new Output();
+			}
+			
+			in.operar(wrap);
+		}
+	}
+}

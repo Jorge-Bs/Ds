@@ -1,0 +1,16 @@
+package main;
+
+public class Pila {
+	private static int[] pila = new int[32];
+	private static int sp = 0;
+	
+	static void push(int valor) {
+		pila[sp] = valor;
+		sp++;
+	}
+
+	static int pop() {
+		sp--;
+		return pila[sp];
+	}
+}

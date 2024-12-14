@@ -1,0 +1,14 @@
+package instrucciones;
+
+import machine.Wrapper;
+
+public class Push implements Instruccion {
+
+	@Override
+	public void operar(Wrapper wrap) {
+		Pila pila = wrap.getPila();
+		pila.push(Integer.parseInt(instruccion[1]));
+		ip++;
+	}
+
+}

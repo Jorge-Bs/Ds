@@ -1,0 +1,9 @@
+package model;
+
+public class Categoria {
+	private int id;
+	
+	public Categoria(int id) {
+		this.id=id;
+	}
+}

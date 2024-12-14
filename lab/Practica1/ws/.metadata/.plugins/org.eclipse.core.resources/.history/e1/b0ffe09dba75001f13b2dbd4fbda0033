@@ -1,0 +1,10 @@
+package model;
+
+public class CategoriaNew implements Categoria {
+
+	@Override
+	public double getPrecio(Rental rental) {
+		return rental.getDays() * 3;
+	}
+
+}

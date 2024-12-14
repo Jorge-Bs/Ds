@@ -1,0 +1,8 @@
+1726659270875	Extract method 'calcularImporte'
+1726659434391	Extract method 'comprobarNovedades'
+1726660893291	Extract method 'getPoints'
+1726661056032	Move method 'getPoints'
+1726661069447	Move method 'getPrice'
+1726661174627	Move method 'getPoints'
+1726661186909	Move method 'getPrice'
+1726662027651	Delete element

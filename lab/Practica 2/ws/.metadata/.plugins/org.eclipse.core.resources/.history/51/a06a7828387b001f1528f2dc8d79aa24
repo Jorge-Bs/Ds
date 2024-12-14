@@ -1,0 +1,13 @@
+package instrucciones;
+
+import machine.Pila;
+
+public class Add implements Instruccion {
+
+	@Override
+	public void operar(Wrapper pila) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

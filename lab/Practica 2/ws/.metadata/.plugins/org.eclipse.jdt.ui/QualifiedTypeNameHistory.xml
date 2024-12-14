@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="main.Pila"/>
+    <fullyQualifiedTypeName name="machine.VirtualMachine"/>
+    <fullyQualifiedTypeName name="machine.Memoria"/>
+    <fullyQualifiedTypeName name="machine.Wrapper"/>
+    <fullyQualifiedTypeName name="instrucciones.Add"/>
+    <fullyQualifiedTypeName name="instrucciones.Push"/>
+    <fullyQualifiedTypeName name="instrucciones.Sub"/>
+    <fullyQualifiedTypeName name="instrucciones.Mul"/>
+    <fullyQualifiedTypeName name="instrucciones.Jmpg"/>
+    <fullyQualifiedTypeName name="instrucciones.Jmp"/>
+    <fullyQualifiedTypeName name="instrucciones.Load"/>
+    <fullyQualifiedTypeName name="instrucciones.Store"/>
+    <fullyQualifiedTypeName name="instrucciones.Input"/>
+    <fullyQualifiedTypeName name="instrucciones.Instruccion"/>
+    <fullyQualifiedTypeName name="instrucciones.Output"/>
+</qualifiedTypeNameHistroy>

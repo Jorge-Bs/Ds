@@ -1,0 +1,12 @@
+package machine;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class VirtualMachine {
+	private static List<String[]> instrucciones = new ArrayList<String[]>();
+	
+	public VirtualMachine(List<String[]> instruccinones) {
+		this.instrucciones=instruccinones;
+	}
+}

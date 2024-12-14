@@ -1,0 +1,8 @@
+package main;
+
+public class Pila {
+	private static int[] pila = new int[32];
+	private static int sp = 0;
+	
+	
+}

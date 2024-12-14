@@ -1,0 +1,21 @@
+package machine;
+
+public class Wrapper {
+	Pila pila;
+
+	Memoria memoria;
+	
+	public Wrapper(Pila pila,Memoria memoria) {
+		this.pila=pila;
+		this.memoria=memoria;
+	}
+	
+	public Pila getPila() {
+		return pila;
+	}
+
+	public Memoria getMemoria() {
+		return memoria;
+	}
+	
+}

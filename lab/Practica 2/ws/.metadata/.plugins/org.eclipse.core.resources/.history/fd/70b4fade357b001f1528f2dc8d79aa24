@@ -1,0 +1,62 @@
+package machine;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class VirtualMachine {
+	private  List<String[]> instrucciones = new ArrayList<String[]>();
+	private static int ip = 0;
+	
+	private  Pila pila = new Pila(32);
+	
+	public VirtualMachine(List<String[]> instruccinones) {
+		this.instrucciones=instruccinones;
+	}
+	
+	public  void ejecutaPrograma() {
+		while (ip < instrucciones.size()) {
+			String[] instruccion = instrucciones.get(ip);
+
+			if (instruccion[0].equals("push")) {
+				pila.push(Integer.parseInt(instruccion[1]));
+				ip++;
+			} else if (instruccion[0].equals("add")) {
+				pila.push(pila.pop() + pila.pop());
+				ip++;
+			} else if (instruccion[0].equals("sub")) {
+				int b = pop();
+				int a = pop();
+				push(a - b);
+				ip++;
+			} else if (instruccion[0].equals("mul")) {
+				push(pop() * pop());
+				ip++;
+			} else if (instruccion[0].equals("jmp")) {
+				ip = Integer.parseInt(instruccion[1]);
+			} else if (instruccion[0].equals("jmpg")) {
+				int b = pop();
+				int a = pop();
+				if (a > b)
+					ip = Integer.parseInt(instruccion[1]);
+				else
+					ip++;
+			} else if (instruccion[0].equals("load")) {
+				int direccion = pop();
+				push(memoria[direccion]);
+				ip++;
+			} else if (instruccion[0].equals("store")) {
+				int valor = pop();
+				int direccion = pop();
+				memoria[direccion] = valor;
+				ip++;
+			} else if (instruccion[0].equals("input")) {
+				System.out.println("Escriba un entero:");
+				push(console.nextInt());
+				ip++;
+			} else if (instruccion[0].equals("output")) {
+				System.out.println(pop());
+				ip++;
+			}
+		}
+	}
+}

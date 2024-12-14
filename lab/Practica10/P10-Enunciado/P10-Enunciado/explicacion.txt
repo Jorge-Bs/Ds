@@ -1,0 +1,6 @@
+La diferencia entre uso del adapter y extender de BallGame es la siguiente:
+Al extender de BallGame se crean tantas clases como plataformas a las que se le desean implementar,
+pero si se hace una nueva implementación del juego o version, hay que modificar todas estas clases.
+
+Al hacer un adapter, se crean una adaptación de cada api, si el juego cambia, dichos métodos no,
+por lo que nos permite reutilizar estos adapters

@@ -1,0 +1,9 @@
+package instrucciones;
+
+import machine.Pila;
+import machine.Wrapper;
+
+public interface Instruccion {
+
+	public void operar(Wrapper wrap);
+}

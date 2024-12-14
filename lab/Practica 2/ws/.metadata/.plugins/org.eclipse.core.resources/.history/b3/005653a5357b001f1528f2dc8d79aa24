@@ -1,0 +1,20 @@
+package machine;
+
+public class Pila {
+	private static int[] pila;
+	private static int sp = 0;
+	
+	public Pila(int value) {
+		this.pila= new int[value];
+	}
+	
+	static void push(int valor) {
+		pila[sp] = valor;
+		sp++;
+	}
+
+	static int pop() {
+		sp--;
+		return pila[sp];
+	}
+}

@@ -1,0 +1,11 @@
+package model;
+
+public class CategoriaChildren implements Categoria {
+
+	@Override
+	public int getPrecio(Rental rental) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
